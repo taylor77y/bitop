@@ -47,17 +47,7 @@
             <version>${druid.version}</version>
         </dependency>
 
-        <!--   springfox-swagger2 依赖-->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>3.0.0</version>
-        </dependency>
+
 
         <!--        lombok 工具-->
         <dependency>
@@ -72,18 +62,26 @@
             <version>${mybatis.plus.boot.starter.version}</version>
         </dependency>
 
+        <!--  javax.validation -->
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
             <version>${validation-api.version}</version>
         </dependency>
 
+        <!--  mysql-connector -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
 
+        <!--  knife4j -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>1.9.6</version>
+        </dependency>
     </dependencies>
 
     <build>

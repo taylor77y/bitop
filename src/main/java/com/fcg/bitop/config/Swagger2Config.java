@@ -1,5 +1,6 @@
 package com.fcg.bitop.config;
 
+import com.github.xiaoymin.knife4j.spring.annotations.EnableSwaggerBootstrapUi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @EnableSwagger2
+@EnableSwaggerBootstrapUi
 @Configuration
 public class Swagger2Config extends WebMvcConfigurationSupport {
     @Bean
@@ -64,10 +66,10 @@ public class Swagger2Config extends WebMvcConfigurationSupport {
     }
 
 
-    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("swagger-ui.html")
-                .addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
-    }
+//    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("swagger-ui.html")
+//                .addResourceLocations("classpath:/META-INF/resources/");
+//        registry.addResourceHandler("/webjars/**")
+//                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+//    }
 }

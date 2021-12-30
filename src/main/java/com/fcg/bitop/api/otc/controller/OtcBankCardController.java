@@ -1,5 +1,6 @@
 package com.fcg.bitop.api.otc.controller;
 
+import com.fcg.bitop.api.otc.entity.req.BankCardReqDto;
 import com.fcg.bitop.api.otc.entity.resp.BankCardRespDto;
 import com.fcg.bitop.api.otc.service.OtcBankCardService;
 import io.swagger.annotations.Api;
@@ -10,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Slf4j
@@ -31,20 +33,20 @@ public class OtcBankCardController {
     }
 
 
-//    @ApiOperation(value = "添加/修改 用户银行卡信息")
+    @ApiOperation(value = "添加/修改 用户银行卡信息")
 //    @AuthToken
-//    @PostMapping("addOrUpdateUserBankCard")
+    @PostMapping("addOrUpdateUserBankCard")
 //    @Log(title = "添加/修改 用户银行卡信息", businessType = BusinessType.INSERT, operatorType = OperatorType.MOBILE)
-//    public Response addOrUpdateUserBankCard(@RequestBody @Valid UserBankCardAddrReqDto bankCardReqDto){
-//        return ezPaymentBankService.addOrUpdateUserBankCard(bankCardReqDto);
-//    }
+    public ResponseEntity<Void> addOrUpdateUserBankCard(@RequestBody @Valid BankCardReqDto bankCardReqDto){
+        return otcBankCardService.addOrUpdateUserBankCard(bankCardReqDto);
+    }
 
 
-//    @ApiOperation(value = "修改用户 银行卡 状态")
+    @ApiOperation(value = "修改用户 银行卡 状态")
 //    @AuthToken
-//    @PostMapping("updateUserBankCardStatus")
+    @PostMapping("updateUserBankCardStatus")
 //    @Log(title = "修改用户 银行卡 状态", businessType = BusinessType.INSERT, operatorType = OperatorType.MOBILE)
-//    public Response updateUserBankCardStatus(@RequestBody @Valid UserBankCardAddrReqDto bankCardReqDto){
-//        return ezPaymentBankService.updateUserBankCardStatus(bankCardReqDto);
-//    }
+    public ResponseEntity<Void> updateUserBankCardStatus(@RequestBody @Valid BankCardReqDto bankCardReqDto){
+        return otcBankCardService.updateUserBankCardStatus(bankCardReqDto);
+    }
 }
