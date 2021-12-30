@@ -7,6 +7,7 @@ import com.fcg.bitop.api.otc.entity.req.BankCardReqDto;
 import com.fcg.bitop.api.otc.entity.resp.BankCardRespDto;
 import com.fcg.bitop.api.otc.mapper.OtcBankCardMapper;
 import com.fcg.bitop.api.otc.service.OtcBankCardService;
+import com.fcg.bitop.context.ContextHandler;
 import com.fcg.bitop.util.BeanUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class OtcBankCardServiceImpl extends ServiceImpl<OtcBankCardMapper, OtcBa
 
     @Override
     public ResponseEntity<Void> addOrUpdateUserBankCard(BankCardReqDto bankCardReqDto) {
-        String userId = "123456";//ContextHandler.getUserId();
+        String userId = ContextHandler.getUserId();
         OtcBankCard paymentBank = new OtcBankCard();
         BeanUtils.copyProperties(paymentBank,bankCardReqDto);
         paymentBank.setUserId(userId);
@@ -44,7 +45,7 @@ public class OtcBankCardServiceImpl extends ServiceImpl<OtcBankCardMapper, OtcBa
 
     @Override
     public ResponseEntity<Void> updateUserBankCardStatus(BankCardReqDto bankCardReqDto) {
-        String userId = "123456";//ContextHandler.getUserId();
+        String userId = ContextHandler.getUserId();
         OtcBankCard paymentBank = new OtcBankCard();
         BeanUtils.copyProperties(paymentBank,bankCardReqDto);
         paymentBank.setUserId(userId);
